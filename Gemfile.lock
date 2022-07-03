@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/ozifrankly/weather_twitter
+  revision: d68fe60eb88f1eb979b546bf8362b2e644071fda
+  specs:
+    weather_twitter (0.1.0)
+      rake (~> 13.0)
+      rest-client (~> 2.1)
+      twitter (~> 7.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -66,8 +75,11 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
     bootsnap (1.12.0)
       msgpack (~> 1.2)
+    buftok (0.2.0)
     builder (3.2.4)
     coderay (1.1.3)
     concurrent-ruby (1.1.10)
@@ -77,9 +89,32 @@ GEM
       reline (>= 0.2.7)
     diff-lcs (1.5.0)
     digest (3.1.0)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
+    equalizer (0.0.11)
     erubi (1.10.0)
+    ffi (1.15.5)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
     globalid (1.0.0)
       activesupport (>= 5.0)
+    http (4.4.1)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 2.2)
+      http-parser (~> 1.2.0)
+    http-accept (1.7.0)
+    http-cookie (1.0.5)
+      domain_name (~> 0.5)
+    http-form_data (2.3.0)
+    http-parser (1.2.3)
+      ffi-compiler (>= 1.0, < 2.0)
+    http_parser.rb (0.6.0)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
     io-console (0.5.11)
@@ -91,10 +126,17 @@ GEM
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (1.0.2)
+    memoizable (0.4.2)
+      thread_safe (~> 0.3, >= 0.3.1)
     method_source (1.0.0)
+    mime-types (3.4.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2022.0105)
     mini_mime (1.1.2)
     minitest (5.16.1)
     msgpack (1.5.3)
+    multipart-post (2.2.3)
+    naught (1.1.0)
     net-imap (0.2.3)
       digest
       net-protocol
@@ -109,6 +151,7 @@ GEM
       digest
       net-protocol
       timeout
+    netrc (0.11.0)
     nio4r (2.5.8)
     nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
@@ -117,6 +160,7 @@ GEM
       method_source (~> 1.0)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
+    public_suffix (4.0.7)
     puma (5.6.4)
       nio4r (~> 2.0)
     racc (1.6.0)
@@ -152,6 +196,11 @@ GEM
     rake (13.0.6)
     reline (0.3.1)
       io-console (~> 0.5)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rspec-core (3.11.0)
       rspec-support (~> 3.11.0)
     rspec-expectations (3.11.0)
@@ -169,11 +218,28 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.11.0)
+    simple_oauth (0.3.1)
+    sqlite3 (1.4.4)
     strscan (3.0.3)
     thor (1.2.1)
+    thread_safe (0.3.6)
     timeout (0.3.0)
+    twitter (7.0.0)
+      addressable (~> 2.3)
+      buftok (~> 0.2.0)
+      equalizer (~> 0.0.11)
+      http (~> 4.0)
+      http-form_data (~> 2.0)
+      http_parser.rb (~> 0.6.0)
+      memoizable (~> 0.4.0)
+      multipart-post (~> 2.0)
+      naught (~> 1.0)
+      simple_oauth (~> 0.3.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.8.2)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -185,11 +251,14 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  dotenv-rails
   pry-rails (~> 0.3.9)
   puma (~> 5.0)
   rails (~> 7.0.3)
   rspec-rails (~> 5.1.2)
+  sqlite3 (~> 1.4)
   tzinfo-data
+  weather_twitter!
 
 RUBY VERSION
    ruby 3.1.2p20

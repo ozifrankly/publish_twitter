@@ -7,7 +7,7 @@ ruby "3.1.2"
 gem "rails", "~> 7.0.3"
 
 # Use sqlite3 as the database for Active Record
-#gem "sqlite3", "~> 1.4"
+gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -36,8 +36,11 @@ gem "bootsnap", require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
 
+gem 'weather_twitter', git: 'https://github.com/ozifrankly/weather_twitter'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'dotenv-rails'
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'pry-rails', '~> 0.3.9'
   gem 'rspec-rails', '~> 5.1.2'
@@ -48,6 +51,4 @@ group :development do
   # gem "spring"
 end
 
-group :test do
-end
 
