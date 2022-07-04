@@ -1,24 +1,14 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Publish_twitte is an application that consults the weather information of a city at [openweathermap](https://openweathermap.org/api) and publishes a tweet with them.
 
-Things you may want to cover:
+## Run
 
-* Ruby version
+ruby version: 3.1.2
 
-* System dependencies
+```bash
+$ bundle install
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+$ rails server
+```
